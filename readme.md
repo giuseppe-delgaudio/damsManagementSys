@@ -1,11 +1,12 @@
-![Dams Management System Logo](./web/images/logoWB.png)
+![Dams Management System Logo](./Web/images/logoWB.png)
+
 ## Context
 
 Nowadays with the growth of energy cost, renewable energy are more important than in the past. The IoT and Serverless can be game-changing for these applications, where geographical distribution of "things"( production point ) is a keyword.
 This application implements a system to manage a grid of sensors nationally distribuited, the goal of the project is to balance consumption and production using [energy pumped storage](https://en.wikipedia.org/wiki/Pumped-storage_hydroelectricity). This type of hydroelectricity use dams as "battery", so the main goal is to try to store the excess of production from solar field in dams regionally distribuited, transforming the electricty in potential energy. When the production is lower than consumption the dams try, if it's possible, to produce energy opening the valves and producing energy in more conventional way.
 
 ## Architectures
-![Architecture images](./web/images/ServerlessArch.png)
+![Architecture images](./Web/images/ServerlessArch.png)
 
 The diagram above show in a simple way how the different services are connected.
 All the data and statistics are stored in a noSQL DB with the shadow of the object. The several sensors send data to the reference queue and after, a lambda function "consume" data and elaborate them, if is necessary, the function can trigger the dams (with publish/subscribe pattern) to switch from production or storage mode, or viceversa. All the data, and status can be viewed on a web monitor hosted on nginx server.
