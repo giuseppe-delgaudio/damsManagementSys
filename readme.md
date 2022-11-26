@@ -110,9 +110,10 @@ aws lambda invoke --function-name lambdaDams lambdaDams.txt --endpoint-url http:
 - <code>N.B if some function dosen't work try to reload the function code</code>
 
 ```bash
-aws lambda update-function-code --fun
-ction-name dataConverter --zip-file fileb://dataConverter.zip --endpoint-url=http://localhost:4566
+aws lambda update-function-code --function-name dataConverter --zip-file fileb://dataConverter.zip --endpoint-url=http://localhost:4566
+```
 
+```bash
 aws lambda update-function-code --function-name lambdaDams --zip-file fileb://lambdaDams.zip --endpoint-url=http://localhost:4566
 ```
 <br>
