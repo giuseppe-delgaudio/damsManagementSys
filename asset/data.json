@@ -153,7 +153,7 @@
             "pump":"off",
             "valve" :"close",
             "production": "0",
-            "level" : "20"
+            "level" : "80"
 
         },
         {
@@ -165,7 +165,7 @@
             "pump":"off",
             "valve" :"close",
             "production": "0",
-            "level" : "50"
+            "level" : "70"
 
         }
     ]
