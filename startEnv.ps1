@@ -25,8 +25,8 @@ Write-Output "nginx started"
 .\.venv\Scripts\activate
 
 #Initialize aws enviroment
-py asset/inizializeDb.py
-py asset/inizializeQueue.py
+py inizializeDb.py
+py inizializeQueue.py
 
 Write-Output "environment initialized"
 

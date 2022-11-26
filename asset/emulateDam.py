@@ -1,14 +1,10 @@
-
-from ast import arg
-from asyncio import events
 from calendar import day_abbr
 from time import sleep
 import boto3
-import random
 import json
 from boto3.dynamodb.conditions import Attr
 from threading import Event, Thread
-from flask import Flask , make_response , jsonify , request
+from flask import Flask , make_response , request
 
 class damsDatas:
     def __init__(self , dams , region) -> None:

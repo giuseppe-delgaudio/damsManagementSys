@@ -1,8 +1,5 @@
-from filecmp import dircmp
 import boto3
-import botocore
-import json
-from boto3.dynamodb.conditions import Attr
+
 
 # create aws client
 dynamodb_res  = boto3.resource('dynamodb', endpoint_url="http://localhost:4566")
@@ -43,13 +40,10 @@ topic = sns_res.create_topic(Name="pump_notify")
 print("topic pump notify created\n")
 sensorTable  = dynamodb_res.Table(name='Sensors')
 
-#topic.subscribe( Protocol='http', Endpoint='http://172.19.0.3:1880/start' )
-#print("/start subscribed to topic\n")
 
 sensorPump = dict()
 sensorPump["sensor_id"] = "0"
 sensorPump["region"] = "all"
 sensorPump["arn"] = topic.arn
-#sensorPump["endpoint"] = 'http://172.19.0.3:1880/start'
 sensorTable.put_item(Item=sensorPump)
 

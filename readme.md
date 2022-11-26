@@ -14,6 +14,7 @@ All the data and statistics are stored in a noSQL DB with the shadow of the obje
 ## Installation
 
 Clone the repository from github and after create the virtual enviroment of python.
+<code>The application is tested on Python v3.10.4</code>
 <br>
 ```bash 
 python -m venv ./.venv 
@@ -32,7 +33,7 @@ To configure the application, if you are running on Windows or you have installe
 <code>N.B you must put all the file of GitHub clone on Desktop, in a folder named DamsSys</code> 
 
 <br>
-Otherwise follow the instruction below.
+Otherwise if you are running another sysyem follow the instruction below.
 
 - create a docker container of localstack 
   ```bash
@@ -43,10 +44,15 @@ Otherwise follow the instruction below.
   docker run --name nginx -v {absolutePathGitCloneFolder}\Web:/usr/share/nginx/html:ro -d -p 8080:80 nginx:stable-alpine
   ```
 - Inizialize db and queue
+  
   ```bash
-  py asset/inizializeDb.py
+    py asset/inizializeDb.py
+  ```
+
+  ```bash
   py asset/inizializeQueue.py
   ```
+
 - Define lambdaRole and <code>save the ARN of rule</code>
   ```bash
   aws iam create-role --role-name lambdarole --assume-role-policy-document file://policy/role_policy.json --query 'Role.Arn' --endpoint-url=http://localhost:4566
@@ -67,26 +73,27 @@ Otherwise follow the instruction below.
   aws lambda create-function --function-name dataConverter --zip-file fileb://dataConverter.zip --handler dataConverter.lambda_handler --runtime python3.6 --role {insertTheLambdaRoleARN} --endpoint-url=http://localhost:4566
   ```
 - Create the lambda function url configuration and <code>save the url</code>
-```bash
-aws lambda create-function-url-config --function-name dataConverter --auth-type NONE --cors AllowCredentials=true,AllowMethods=*,AllowOrigins=*,AllowHeaders=*,MaxAge=600,ExposeHeaders=* --endpoint-url=http://localhost:4566
-``` 
+  ```bash
+  aws lambda create-function-url-config --function-name dataConverter --auth-type NONE --cors AllowCredentials=true,AllowMethods=*,AllowOrigins=*,AllowHeaders=*,MaxAge=600,ExposeHeaders=* --endpoint-url=http://localhost:4566
+  ``` 
 - Change the url inside the <code>.\Web\assets\js\init\loadData.js</code> with the new url created before from url configuration of <code>dataConverter</code>
 <br>
 - Create the lambda function lambdaDams and <code>save the ARN</code>
 
-```bash
-aws lambda create-function --function-name lambdaDams --zip-file fileb://lambdaDams.zip --handler lambdaDams.lambda_handler --runtime python3.6 --role {insertTheLambdaRoleARN} --endpoint-url=http://localhost:4566
-``` 
+  ```bash
+  aws lambda create-function --function-name lambdaDams --zip-file fileb://lambdaDams.zip --handler lambdaDams.lambda_handler --runtime python3.6 --role {insertTheLambdaRoleARN} --endpoint-url=http://localhost:4566
+  ``` 
 <br>
 
 - Create the rule to trigger the lambda function lambdaDams and <code>save the ARN of rule</code>
   
-```bash
-aws events put-rule --name damsRoutine --schedule-expression 'rate(1 minutes)' --endpoint-url=http://localhost:4566
-```
-```bash
-aws lambda add-permission --function-name lambdaDams --statement-id actionRoutine --action 'lambda:InvokeFunction' --principal events.amazonaws.com --source-arn {insertTheARNofRule} --endpoint-url=http://localhost:4566
-```
+  ```bash
+  aws events put-rule --name damsRoutine --schedule-expression 'rate(1 minutes)' --endpoint-url=http://localhost:4566
+  ```
+
+  ```bash
+    aws lambda add-permission --function-name lambdaDams --statement-id actionRoutine --action 'lambda:InvokeFunction' --principal events.amazonaws.com --source-arn {insertTheARNofRule} --endpoint-url=http://localhost:4566
+  ```
 
 - Put inside the json file <b>asset/target.json</b> the <code> ARN of lambdaDams function</code> saved before.
 
@@ -94,28 +101,28 @@ aws lambda add-permission --function-name lambdaDams --statement-id actionRoutin
 
 - Set the target of rule 
 
-```bash
-aws events put-targets --rule damsRoutine --targets file://asset/target.json  --endpoint-url=http://localhost:4566
-```
+  ```bash
+  aws events put-targets --rule damsRoutine --targets file://asset/target.json  --endpoint-url=http://localhost:4566
+  ```
 <br>
 
 - Test the correct execution of lambdaDams  
 
-```bash
-aws lambda invoke --function-name lambdaDams lambdaDams.txt --endpoint-url http://localhost:4566
-```
+  ```bash
+  aws lambda invoke --function-name lambdaDams lambdaDams.txt --endpoint-url http://localhost:4566
+  ```
 
 <br>
 
 - <code>N.B if some function dosen't work try to reload the function code</code>
 
-```bash
-aws lambda update-function-code --function-name dataConverter --zip-file fileb://dataConverter.zip --endpoint-url=http://localhost:4566
-```
+  ```bash
+  aws lambda update-function-code --function-name dataConverter --zip-file fileb://dataConverter.zip --endpoint-url=http://localhost:4566
+  ```
 
-```bash
-aws lambda update-function-code --function-name lambdaDams --zip-file fileb://lambdaDams.zip --endpoint-url=http://localhost:4566
-```
+  ```bash
+  aws lambda update-function-code --function-name lambdaDams --zip-file fileb://lambdaDams.zip --endpoint-url=http://localhost:4566
+  ```
 <br>
 
 ## Start emulation of sensors 
@@ -131,7 +138,7 @@ Open you web broswer without the web-security feature.
 
 For example if you are running chrome : 
 ```bash
-./chrome.exe --disable-web-security  "http://localhost:8080/"
+ ./chrome.exe --disable-web-security  --user-data-dir={absolutePathTemp} "http://localhost:8080/"
 ```
 
 
