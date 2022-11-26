@@ -14,15 +14,16 @@ class Sensors():
         self.res_sqs = boto3.resource('sqs', endpoint_url="http://localhost:4566")
         self.sensorObj = sensorObj
         self.seed = seed
+        random.seed(self.seed)
     
     def sendMessage( self , queue  ):
         newMessage = dict()
         newMessage["sensor"] = self.sensorObj
         
         if (self.sensorObj["type"] == "producer"):
-            value = random.randrange(start=0 , stop = 2000 )
+            value = random.randrange(start=10 , stop = 3000 )
         else : 
-             value = random.randrange(start=1000 , stop = 5000 )
+             value = random.randrange(start=200 , stop = 4000 )
         
         newMessage["data"] = str( value )
         self.sensorObj["value"] = str(value) 
@@ -31,7 +32,7 @@ class Sensors():
         print("Message ->",self.sensorObj["region"]+"  "+ self.sensorObj["type"]+" "+newMessage["data"]+"\n")
 
     def emulate(self):
-        random.seed(self.seed)
+        
         queue = self.res_sqs.Queue(self.sensorObj["url_queue"])
         self.sendMessage(queue=queue)
 

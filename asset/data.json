@@ -133,10 +133,55 @@
 
         },
         {
-            "sensor_id":"6",
-            "region" : "Campania",
-            "latitude" : "40.755126", 
-            "longitude" : "14.832463",
+            "sensor_id":"7",
+            "region" : "Trentino-AltoAdige",
+            "latitude" : "46.1234789199134", 
+            "longitude" : "10.196307586355632",
+            "value" : "0",
+            "type":"producer"
+
+        },
+        {
+            "sensor_id":"8",
+            "region" : "Trentino-AltoAdige",
+            "latitude" : "46.11776759340892", 
+            "longitude" : "11.055987754990364",
+            "value" : "0",
+            "type":"producer"
+
+        },
+        {
+            "sensor_id":"9",
+            "region" : "Trentino-AltoAdige",
+            "latitude" : "46.39427676448909", 
+            "longitude" : "11.230892036533012",
+            "value" : "0",
+            "type":"consumer"
+
+        },
+        {
+            "sensor_id":"10",
+            "region" : "Emilia-Romagna",
+            "latitude" : "44.19387001664154", 
+            "longitude" : "10.281523153418622",
+            "value" : "0",
+            "type":"consumer"
+
+        },
+        {
+            "sensor_id":"11",
+            "region" : "Emilia-Romagna",
+            "latitude" : "44.192387875939666", 
+            "longitude" : "10.539725723656021",
+            "value" : "0",
+            "type":"producer"
+
+        },
+        {
+            "sensor_id":"12",
+            "region" : "Emilia-Romagna",
+            "latitude" : "44.23126887779826", 
+            "longitude" : "10.440848777259385",
             "value" : "0",
             "type":"producer"
 
@@ -166,6 +211,30 @@
             "valve" :"close",
             "production": "0",
             "level" : "70"
+
+        },
+        {
+            "dam_id":"2",
+            "region" : "Trentino-AltoAdige",
+            "name" : "diga di resia",
+            "latitude" : "46.80612668650559", 
+            "longitude" : "10.531218980849571",
+            "pump":"off",
+            "valve" :"close",
+            "production": "0",
+            "level" : "80"
+
+        },
+        {
+            "dam_id":"3",
+            "region" : "Emilia-Romagna",
+            "name" : "Diga di Fontanaluccia",
+            "latitude" : "44.297897402621764", 
+            "longitude" : "10.508140051318042",
+            "pump":"off",
+            "valve" :"close",
+            "production": "0",
+            "level" : "80"
 
         }
     ]

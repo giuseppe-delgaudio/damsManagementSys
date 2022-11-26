@@ -15,7 +15,7 @@ $nginx = docker start nginx
 if ( $nginx -ne "nginx" ){
     
     Write-Output "nginx container dosen't exist, creating one"
-    docker run --name nginx -v $DesktopPath\DamsSys\Web:/usr/share/nginx/html:ro -d -p 8080:80 nginx:stable-alpine
+    docker run --name nginx -v $DesktopPath\damsSys\Web:/usr/share/nginx/html:ro -d -p 8080:80 nginx:stable-alpine
     Write-Output "nginx created"
 }
 Write-Output "nginx started"
@@ -67,9 +67,10 @@ Write-Output "Start emulation"
 #Start data generation
 py .\startEmulation.py
 
-Start-Sleep -Seconds 2
+Start-Sleep -Seconds 5
 
+aws lambda invoke --function-name lambdaDams lambdaDams.txt --endpoint-url http://localhost:4566
 aws lambda update-function-code --function-name dataConverter --zip-file fileb://dataConverter.zip --endpoint-url=http://localhost:4566
 aws lambda update-function-code --function-name lambdaDams --zip-file fileb://lambdaDams.zip --endpoint-url=http://localhost:4566
-aws lambda invoke --function-name lambdaDams lambdaDams.txt --endpoint-url http://localhost:4566
+
 
