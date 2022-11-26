@@ -15,7 +15,7 @@ $nginx = docker start nginx
 if ( $nginx -ne "nginx" ){
     
     Write-Output "nginx container dosen't exist, creating one"
-    docker run --name nginx -v $DesktopPath\P.serverless\Web:/usr/share/nginx/html:ro -d -p 8080:80 nginx:stable-alpine
+    docker run --name nginx -v $DesktopPath\DamsSys\Web:/usr/share/nginx/html:ro -d -p 8080:80 nginx:stable-alpine
     Write-Output "nginx created"
 }
 Write-Output "nginx started"
