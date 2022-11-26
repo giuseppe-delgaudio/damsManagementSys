@@ -73,6 +73,7 @@ aws lambda create-function-url-config --function-name dataConverter --auth-type 
 - Change the url inside the <code>.\Web\assets\js\init\loadData.js</code> with the new url created before from url configuration of <code>dataConverter</code>
 <br>
 - Create the lambda function lambdaDams and <code>save the ARN</code>
+
 ```bash
 aws lambda create-function --function-name lambdaDams --zip-file fileb://lambdaDams.zip --handler lambdaDams.lambda_handler --runtime python3.6 --role {insertTheLambdaRoleARN} --endpoint-url=http://localhost:4566
 ``` 
