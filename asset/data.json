@@ -1,0 +1,173 @@
+{
+    "Regions":[ 
+            
+        {
+            "region_name": "Abruzzo"
+        }, 
+            
+        { 
+            "region_name": "Basilicata"
+        }, 
+            
+        {
+             "region_name": "Calabria"
+        }, 
+            
+        {
+             "region_name": "Campania"
+        }, 
+            
+        {
+            "region_name": "Emilia-Romagna"
+        }, 
+        
+        {
+            "region_name": "Friuli-Venezia Giulia"
+        }, 
+            
+        {
+            "region_name": "Lazio"
+        }, 
+            
+        {
+            "region_name": "Liguria"     
+        }, 
+        
+        {
+            "region_name": "Lombardia"   
+        }, 
+            
+        {
+             "region_name": "Marche"
+        }, 
+        
+        {
+            "region_name": "Molise"
+        }, 
+        
+        {
+            "region_name": "Piemonte"    
+        }, 
+        
+        {
+            "region_name": "Puglia"
+        }, 
+        
+        {
+            "region_name": "Sardegna"     
+        }, 
+        
+        {
+            "region_name": "Sicilia"
+        }, 
+        
+        {
+            "region_name": "Toscana"
+        }, 
+        
+        {
+            "region_name": "Trentino-Alto Adige"
+        }, 
+            
+        {
+             "region_name": "Umbria"
+        }, 
+        
+        {
+            "region_name": "Valle d Aosta"
+        }, 
+        
+        {
+            "region_name": "Veneto"
+        }
+
+                    
+
+    
+    ],
+
+    "Sensors" :[
+        {
+            "sensor_id":"1",
+            "region" : "Campania",
+            "latitude" : "40.655039",
+            "longitude" : "14.38076",
+            "value" : "0",
+            "type":"producer"
+
+        },
+        {
+            "sensor_id":"2",
+            "region" : "Campania",
+            "latitude" : "40.773122",
+            "longitude" : "14.794826",
+            "value" : "0",
+            "type":"consumer"
+
+        },
+        {
+            "sensor_id":"3",
+            "region" : "Lazio",
+            "latitude" : "41.983740",
+            "longitude" : "12.272236",
+            "value" : "0",
+            "type":"producer"
+
+        },
+        {
+            "sensor_id":"4",
+            "region" : "Lazio",
+            "latitude" : "41.963698",
+            "longitude" : "12.318736",
+            "value" : "0",
+            "type":"consumer"
+
+        },
+        {
+            "sensor_id":"5",
+            "region" : "Lazio",
+            "latitude" : "42.032418", 
+            "longitude" : "12.307905",
+            "value" : "0",
+            "type":"producer"
+
+        },
+        {
+            "sensor_id":"6",
+            "region" : "Campania",
+            "latitude" : "40.755126", 
+            "longitude" : "14.832463",
+            "value" : "0",
+            "type":"producer"
+
+        }
+    ],
+
+    "Dams" : [
+        {
+            "dam_id":"0",
+            "region" : "Campania",
+            "name" : "diga alento",
+            "latitude" : "40.315349", 
+            "longitude" : "15.109132",
+            "pump":"off",
+            "valve" :"close",
+            "production": "0",
+            "level" : "20"
+
+        },
+        {
+            "dam_id":"1",
+            "region" : "Lazio",
+            "name" : "diga del turano",
+            "latitude" : "42.232374", 
+            "longitude" : "12.941335",
+            "pump":"off",
+            "valve" :"close",
+            "production": "0",
+            "level" : "50"
+
+        }
+    ]
+
+}

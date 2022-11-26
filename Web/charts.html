@@ -1,0 +1,390 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DamsManagement - Regions</title>
+    <meta name="description" content="DamsManagement - Regions">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/1015/1015322.png">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1015/1015322.png">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/1015/1015322.png">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1015/1015322.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+   <style>
+        .chart-container {
+            display: table;
+            min-width: 270px ;
+            text-align: left;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #flotLine5  {
+             height: 105px;
+        }
+
+        #flotBarChart {
+            height: 150px;
+        }
+        #cellPaiChart{
+            height: 160px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                    </li>
+                    <li class="active menu-title">Regions</li>
+                    
+                    <li>
+                        <a href="charts.html#Abruzzo">Abruzzo</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Basilicata">Basilicata</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Calabria">Calabria</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Campania">Campania</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Emilia-Romagna">Emilia-Romagna</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Friuli-VeneziaGiulia">Friuli Venezia Giulia</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Lazio">Lazio</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Liguria">Liguria</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Lombardia">Lombardia</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Marche">Marche</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Molise">Molise</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Piemonte">Piemonte</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Puglia">Puglia</a></li>
+                    <li>
+                        <a href="charts.html#Sardegna">Sardegna</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Sicilia">Sicilia</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Toscana">Toscana</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Trentino-AltoAdige">Trentino-Alto Adige</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Umbria">Umbria</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#ValledAosta">Valle d'Aosta</a>
+                    </li>
+                    <li>
+                        <a href="charts.html#Veneto">Veneto</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+    
+
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                </div>
+            </div>
+        </header>
+        <!-- /#header -->
+        <!-- Breadcrumbs-->
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-inner">
+                <div class="row m-0">
+                    <div class="col-sm-4">
+                        <div class="page-header float-left">
+                            <div class="page-title">
+                                <h1>Regions</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="page-header float-right">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+                                    <li><a href="index.html">Dashboard</a></li>
+                                    <li class="active"><a href="#">Regions</a></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.breadcrumbs-->
+        <!-- Content -->
+        <div class="content">
+            <div class="animated fadeIn">
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Molise </h4>
+                                <canvas id="Molise"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Veneto</h4>
+                                <canvas id="Veneto"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Piemonte </h4>
+                                <canvas id="Piemonte"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Sardegna </h4>
+                                <canvas id="Sardegna"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Valle d'Aosta </h4>
+                                <canvas id="ValledAosta"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Sicilia </h4>
+                                <canvas id="Sicilia"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Emilia-Romagna </h4>
+                                <canvas id="Emilia-Romagna"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Abruzzo </h4>
+                                <canvas id="Abruzzo"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Liguria</h4>
+                                <canvas id="Liguria"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Toscana </h4>
+                                <canvas id="Toscana"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Lombardia </h4>
+                                <canvas id="Lombardia"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Calabria </h4>
+                                <canvas id="Calabria"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Friuli Venezia Giulia </h4>
+                                <canvas id="Friuli-VeneziaGiulia"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Umbria </h4>
+                                <canvas id="Umbria"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Basilicata </h4>
+                                <canvas id="Basilicata"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Campania </h4>
+                                <canvas id="Campania"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Marche </h4>
+                                <canvas id="Marche"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Trentino-Alto Adige </h4>
+                                <canvas id="Trentino-AltoAdige"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Puglia </h4>
+                                <canvas id="Puglia"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Lazio </h4>
+                                <canvas id="Lazio"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+
+                </div>
+
+            </div><!-- .animated -->
+        </div>
+        <!-- /.content -->
+        <div class="clearfix"></div>
+       
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-inner bg-white">
+                <div class="row">
+                    <div class="col-sm-6">
+                        Copyright &copy; 2022 Dams Management System
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- /.site-footer -->
+
+    </div>
+    <!-- /#right-panel -->
+
+    <!-- Scripts -->
+    <script src="assets/js/init/loadData.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!--  Chart js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
+    <script src="assets/js/init/chartjs-init.js"></script>
+    <!--Flot Chart-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
+</body>
+</html>

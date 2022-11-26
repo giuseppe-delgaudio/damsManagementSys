@@ -1,0 +1,237 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DamsManagement - Dashboard</title>
+    <meta name="description" content="DamsManagement - Dashboard">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/1015/1015322.png">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1015/1015322.png">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/1015/1015322.png">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1015/1015322.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                    </li>
+                    <li class="menu-title">Chart Details</li><!-- /.menu-title -->
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Regions</a>
+                        <ul class="sub-menu children dropdown-menu">                            
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Abruzzo">Abruzzo</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Basilicata">Basilicata</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Calabria">Calabria</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Campania">Campania</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Emilia-Romagna">Emilia-Romagna</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Friuli-VeneziaGiulia">Friuli Venezia Giulia</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Lazio">Lazio</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Liguria">Liguria</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Lombardia">Lombardia</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Marche">Marche</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Molise">Molise</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Piemonte">Piemonte</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Puglia">Puglia</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Sardegna">Sardegna</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Sicilia">Sicilia</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Toscana">Toscana</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Trentino-AltoAdige">Trentino-Alto Adige</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Umbria">Umbria</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#ValledAosta">Valle d'Aosta</a></li>
+                            <li><i class="fa fa-globe"></i><a href="charts.html#Veneto">Veneto</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+
+       <!-- Right Panel -->
+       <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                </div>
+            </div>
+        </header>
+        <!-- /#header -->
+        <!-- Content -->
+        <div class="content">
+            <!-- Animated -->
+            <div class="animated fadeIn">
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="box-title" >Sensor's Map</h4>
+                                    <div class="card-body">
+                                        <div id="map" class="map"></div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+ 
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Region all stats</strong>
+                            </div>
+                            <div class="card-body">
+                                <table id="regionAllStatTable" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Region</th>
+                                            <th>AvgProduction</th>
+                                            <th>AvgConsumption</th>
+                                            <th>Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Sensors list</strong>
+                            </div>
+                            <div class="card-body">
+                                <table id="sensorsListTable" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Region</th>
+                                            <th>Sensor id</th>
+                                            <th>Type</th>
+                                            <th>Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Dams list</strong>
+                            </div>
+                            <div class="card-body">
+                                <table id="damsListTable" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Region</th>
+                                            <th>Name</th>
+                                            <th>Last sending value</th>
+                                            <th>Pump state</th>
+                                            <th>Valve state</th>
+                                            <th>Level</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <!-- .animated -->
+        </div>
+        <!-- /.content -->
+        <div class="clearfix"></div>
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-inner bg-white">
+                <div class="row">
+                    <div class="col-sm-6">
+                        Copyright &copy; 2022 Dams Management System
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- /.site-footer -->
+    </div>
+    <!-- /#right-panel -->
+
+
+    <!-- Scripts -->
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+
+
+    <script src="assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+    <script src="assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
+
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2jlT6C_to6X1mMvR9yRWeRvpIgTXgddM"></script>
+   
+    <script src="assets/js/lib/gmap/gmaps.js"></script>
+    <script src="assets/js/init/gmap-init.js"></script>
+    <script src="assets/js/init/loadData.js"></script>
+    <script src="assets/js/init/datatables-init.js"></script> 
+    <script>
+        
+    </script>
+
+</body>
+</html>
