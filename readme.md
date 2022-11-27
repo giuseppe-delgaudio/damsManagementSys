@@ -21,11 +21,14 @@ Clone the repository from github and after create the virtual enviroment of pyth
 ```
 
 <br>
+
 ```bash 
 python -m venv ./.venv 
 ```
+
 Activate the enviroment and install all the requirements.
 <br>
+
 ```bash
 pip install -r requirements.txt
 ```
