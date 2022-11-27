@@ -20,7 +20,7 @@ To configure the application, if you are running on Windows or you have installe
 <br>
 Otherwise if you are running another sysyem follow the instruction below.
 
-- Clone the repository from github and after create the virtual enviroment of python.
+- Clone the repository from github
   
   ```bash
   git clone https://github.com/giuseppe-delgaudio/damsManagementSys damsSys
@@ -58,11 +58,11 @@ Otherwise if you are running another sysyem follow the instruction below.
 - Inizialize db and queue
   
   ```bash
-    py asset/inizializeDb.py
+    py inizializeDb.py
   ```
 
   ```bash
-  py asset/inizializeQueue.py
+  py inizializeQueue.py
   ```
 
 - Define lambdaRole and <code>save the ARN of rule</code>
