@@ -1,4 +1,4 @@
-$DesktopPath = [Environment]::GetFolderPath("Desktop")
+
 
 #start localstack container
 $localstack = docker start localstack
@@ -15,18 +15,30 @@ $nginx = docker start nginx
 if ( $nginx -ne "nginx" ){
     
     Write-Output "nginx container dosen't exist, creating one"
-    docker run --name nginx -v $DesktopPath\damsSys\Web:/usr/share/nginx/html:ro -d -p 8080:80 nginx:stable-alpine
+    docker run --name nginx -v {Get-Location}\damsSys\Web:/usr/share/nginx/html:ro -d -p 8080:80 nginx:stable-alpine
     Write-Output "nginx created"
 }
 Write-Output "nginx started"
 
+git clone https://github.com/giuseppe-delgaudio/damsManagementSys damsSys
+
+python -m venv ./.venv 
 
 #Prepare python enviroment 
-.\.venv\Scripts\activate
+If ($OsType -ne "Linux")
+{    
+    .\.venv\Scripts\activate
+}Else{
+
+    .\.venv\bin\activate
+
+}
+
+pip install -r requirements.txt
 
 #Initialize aws enviroment
-py inizializeDb.py
-py inizializeQueue.py
+python inizializeDb.py
+python inizializeQueue.py
 
 Write-Output "environment initialized"
 
@@ -65,7 +77,7 @@ aws events put-targets --rule damsRoutine --targets file://asset/target.json   -
 Write-Output "Start emulation"
 
 #Start data generation
-py .\startEmulation.py
+python .\startEmulation.py
 
 Start-Sleep -Seconds 5
 

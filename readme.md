@@ -13,27 +13,39 @@ All the data and statistics are stored in a noSQL DB with the shadow of the obje
 
 ## Installation
 
-Clone the repository from github and after create the virtual enviroment of python.
-<code>The application is tested on Python v3.10.4</code>
-<br>
-```bash 
-python -m venv ./.venv 
-```
-Activate the enviroment and install all the requirements.
-<br>
-```bash
-pip install -r requirements.txt
-```
-<br>
+<i>This application is tested on python 3.10.5</i>
 
 To configure the application, if you are running on Windows or you have installed Powershell on Linux based machine, you can simply run the script named <code>startEnv.ps1.</code> after follow the instruction from [Start emulation of sensor ](#start-emulation-of-sensors)
 
-
-<br>
-<code>N.B you must put all the file of GitHub clone on Desktop, in a folder named DamsSys</code> 
-
 <br>
 Otherwise if you are running another sysyem follow the instruction below.
+
+- Clone the repository from github and after create the virtual enviroment of python.
+  
+  ```bash
+  git clone https://github.com/giuseppe-delgaudio/damsManagementSys damsSys
+  ```
+
+<br>
+
+- Create the python enviroment
+  
+  ```bash 
+  python -m venv ./.venv 
+  ```
+
+- Activate the enviroment and install all the requirements.
+
+  ```bash
+  .\.venv\bin\activate
+  ```
+
+
+  ```bash
+  pip install -r requirements.txt
+  ```
+<br>
+
 
 - create a docker container of localstack 
   ```bash
