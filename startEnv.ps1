@@ -20,8 +20,6 @@ if ( $nginx -ne "nginx" ){
 }
 Write-Output "nginx started"
 
-git clone https://github.com/giuseppe-delgaudio/damsManagementSys damsSys
-
 python -m venv ./.venv 
 
 #Prepare python enviroment 

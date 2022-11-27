@@ -15,10 +15,7 @@ All the data and statistics are stored in a noSQL DB with the shadow of the obje
 
 <i>This application is tested on python 3.10.5</i>
 
-To configure the application, if you are running on Windows or you have installed Powershell on Linux based machine, you can simply run the script named <code>startEnv.ps1.</code> after follow the instruction from [Start emulation of sensor ](#start-emulation-of-sensors)
-
 <br>
-Otherwise if you are running another sysyem follow the instruction below.
 
 - Clone the repository from github
   
@@ -27,6 +24,12 @@ Otherwise if you are running another sysyem follow the instruction below.
   ```
 
 <br>
+
+To configure the application, if you are running on Windows or you have installed Powershell on Linux based machine, you can simply run the script named <code>startEnv.ps1.</code> after follow the instruction from [Start emulation of sensor ](#start-emulation-of-sensors)
+
+<br>
+Otherwise if you are running another sysyem follow the instruction below.
+
 
 - Create the python enviroment
   
