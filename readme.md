@@ -46,11 +46,11 @@ Otherwise if you are running another sysyem follow the instruction below.
 - Inizialize db and queue
   
   ```bash
-    py asset/inizializeDb.py
+    py inizializeDb.py
   ```
 
   ```bash
-  py asset/inizializeQueue.py
+  py inizializeQueue.py
   ```
 
 - Define lambdaRole and <code>save the ARN of rule</code>
