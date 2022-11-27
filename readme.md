@@ -15,6 +15,11 @@ All the data and statistics are stored in a noSQL DB with the shadow of the obje
 
 Clone the repository from github and after create the virtual enviroment of python.
 <code>The application is tested on Python v3.10.4</code>
+
+```bash
+ git clone https://github.com/giuseppe-delgaudio/damsManagementSys damsSys
+```
+
 <br>
 ```bash 
 python -m venv ./.venv 
@@ -30,7 +35,7 @@ To configure the application, if you are running on Windows or you have installe
 
 
 <br>
-<code>N.B you must put all the file of GitHub clone on Desktop, in a folder named DamsSys</code> 
+<code>N.B you must put all the file of GitHub clone on Desktop, in a folder named damsSys</code> 
 
 <br>
 Otherwise if you are running another sysyem follow the instruction below.
