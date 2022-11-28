@@ -1,4 +1,4 @@
-
+$location=Get-Location
 
 #start localstack container
 $localstack = docker start localstack
@@ -15,28 +15,23 @@ $nginx = docker start nginx
 if ( $nginx -ne "nginx" ){
     
     Write-Output "nginx container dosen't exist, creating one"
-    docker run --name nginx -v {Get-Location}\damsSys\Web:/usr/share/nginx/html:ro -d -p 8080:80 nginx:stable-alpine
+    docker run --name nginx -v $location\damsSys\Web:/usr/share/nginx/html:ro -d -p 8080:80 nginx:stable-alpine
     Write-Output "nginx created"
 }
 Write-Output "nginx started"
 
-python -m venv ./.venv 
+py -m venv ./.venv 
 
-#Prepare python enviroment 
-If ($OsType -ne "Linux")
-{    
-    .\.venv\Scripts\activate
-}Else{
 
-    .\.venv\bin\activate
+#Prepare python enviroment     
+.\.venv\Scripts\activate
 
-}
 
 pip install -r requirements.txt
 
 #Initialize aws enviroment
-python inizializeDb.py
-python inizializeQueue.py
+py inizializeDb.py
+py inizializeQueue.py
 
 Write-Output "environment initialized"
 
@@ -75,12 +70,15 @@ aws events put-targets --rule damsRoutine --targets file://asset/target.json   -
 Write-Output "Start emulation"
 
 #Start data generation
-python .\startEmulation.py
+py .\startEmulation.py
 
 Start-Sleep -Seconds 5
 
 aws lambda invoke --function-name lambdaDams lambdaDams.txt --endpoint-url http://localhost:4566
+
 aws lambda update-function-code --function-name dataConverter --zip-file fileb://dataConverter.zip --endpoint-url=http://localhost:4566
 aws lambda update-function-code --function-name lambdaDams --zip-file fileb://lambdaDams.zip --endpoint-url=http://localhost:4566
+
+
 
 

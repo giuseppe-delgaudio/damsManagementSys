@@ -11,6 +11,21 @@ This application implements a system to manage a grid of sensors nationally dist
 The diagram above show in a simple way how the different services are connected.
 All the data and statistics are stored in a noSQL DB with the shadow of the object. The several sensors send data to the reference queue and after, a lambda function "consume" data and elaborate them, if is necessary, the function can trigger the dams (with publish/subscribe pattern) to switch from production or storage mode, or viceversa. All the data, and status can be viewed on a web monitor hosted on nginx server.
 
+## Prerequisites
+
+ - Aws CLI must be installed and configurated, according to [localstack dev guide](https://docs.localstack.cloud/integrations/aws-cli/) with the enviroment varaible set to :
+```
+AWS_ACCESS_KEY_ID="test"
+AWS_SECRET_ACCESS_KEY="test"
+AWS_DEFAULT_REGION="us-east-1
+```
+
+you can set it with the aws command configure.
+
+```bash
+aws configure
+```
+
 ## Installation
 
 <i>This application is tested on python 3.10.5</i>
