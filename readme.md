@@ -67,7 +67,7 @@ Otherwise if you are running another sysyem follow the instruction below.
 
 - create a docker container of localstack 
   ```bash
-  docker run -p 4566:4566 -p 4510-4559:4510-4559 -d   --name localstack localstack/localstack
+  docker run -p 4566:4566 -p 4510-4559:4510-4559 -d   --name localstack localstack/localstack:1.2
   ```
 - create a web server for the web monitor 
   ```bash
@@ -76,11 +76,11 @@ Otherwise if you are running another sysyem follow the instruction below.
 - Inizialize db and queue
   
   ```bash
-    py inizializeDb.py
+    python inizializeDb.py
   ```
 
   ```bash
-  py inizializeQueue.py
+  python inizializeQueue.py
   ```
 
 - Define lambdaRole and <code>save the ARN of rule</code>

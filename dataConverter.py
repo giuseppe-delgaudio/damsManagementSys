@@ -1,8 +1,8 @@
 import boto3
 import json
 from datetime import datetime
-from boto3.dynamodb.conditions import Attr
 import statistics
+from boto3.dynamodb.conditions import Attr
 
 def lambda_handler(event, context):
 
@@ -12,11 +12,18 @@ def lambda_handler(event, context):
     #obtain dams information 
     damsTable : dict = dynamodb.Table(name="Dams")
     sensorsTable : dict = dynamodb.Table(name="Sensors")
-    dataStatTable : dict = dynamodb.Table(name="DataStat")
     regionTable : dict = dynamodb.Table(name="Regions")
 
     dams : dict = damsTable.scan()["Items"]
-    sensors : dict =  sensorsTable.scan(FilterExpression= Attr("region").ne("all") & Attr("type").ne("dam_producer"))["Items"]
+    sensors : dict =  sensorsTable.scan()["Items"]
+    i = 0
+    
+    for sensor in sensors :
+         
+        if (sensor["region"] == "all" ) :
+            del sensors[i]
+            break
+        i+=1     
     
     damsMark : list = list()
     sensorsMark : list = list()
@@ -113,6 +120,8 @@ def lambda_handler(event, context):
         stats[region["region_name"]]["consumption"] = consumption
         stats[region["region_name"]]["avgConsumption"] = avgCons
         stats[region["region_name"]]["avgProduction"] = avgProd
+        stats[region["region_name"]]["diff"] = round(avgProd-avgCons,1)
+
         if (  stats[region["region_name"]]["avgProduction"] == 0  and  stats[region["region_name"]]["avgConsumption"] == 0 ):
             stats[region["region_name"]]["time"] = str("")
         else: 

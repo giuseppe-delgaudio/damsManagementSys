@@ -23,7 +23,7 @@ class Sensors():
         if (self.sensorObj["type"] == "producer"):
             value = random.randrange(start=10 , stop = 3000 )
         else : 
-             value = random.randrange(start=200 , stop = 4000 )
+             value = random.randrange(start=200 , stop = 3000 )
         
         newMessage["data"] = str( value )
         self.sensorObj["value"] = str(value) 

@@ -68,9 +68,16 @@ def lambda_handler(event, context):
             region["measurement"] = measurements
 
             #obtain arn of TOPIC pump stored in Sensors Table
-            pumpArn = dynamodb.Table(name="Sensors").scan(Select='ALL_ATTRIBUTES', FilterExpression = Attr(name="region").eq("all"))["Items"][0]
+            sensors = dynamodb.Table(name="Sensors").scan(Select='ALL_ATTRIBUTES')["Items"]
+
+            for sensor in sensors:
+                if(sensor["region"] == "all") :
+                    pumpArn = sensor
+                    break
+            
             #retrive TOPIC resources 
             topic = sns.Topic(pumpArn["arn"])
+
             
             #create message's attributes
             attributes = {}
@@ -87,3 +94,4 @@ def lambda_handler(event, context):
     
             topic.publish(Message=action, MessageAttributes= attributes )
             regionsTable.put_item(Item = region)
+
