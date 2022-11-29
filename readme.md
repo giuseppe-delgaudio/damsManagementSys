@@ -40,7 +40,7 @@ aws configure
 
 <br>
 
-To configure the application, if you are running on Windows or you have installed Powershell on Linux based machine, you can simply run the script named <code>startEnv.ps1.</code> after follow the instruction from [Start emulation of sensor ](#start-emulation-of-sensors)
+To configure the application, if you are running on Windows or you have installed Powershell on Linux based machine, you can simply run the script named <code>startEnv.ps1.</code> after follow the instruction from [ Launch web monitor ](#launch-web-monitor)
 
 <br>
 Otherwise if you are running another sysyem follow the instruction below.
